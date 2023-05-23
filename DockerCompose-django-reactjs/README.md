@@ -48,7 +48,7 @@ Asegúrate de tener instalado lo siguiente en tu pc local o instancia en nube an
 
 
 ## Preparación del Entorno de Trabajo
-1. Clonar el repositorio a nuestra área de trabajo
+1. Clonar el repositorio a tu entorno de trabajo
 ```
 git clone https://github.com/emapradomacat/DockerCompose-django-reactjs.git
 ```
