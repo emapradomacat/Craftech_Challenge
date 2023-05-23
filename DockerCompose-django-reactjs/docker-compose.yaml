@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/backend  # Agrega esta línea para mapear el directorio de trabajo del backend en el contenedor
+    depends_on:
+      - db
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: your_postgres_user
+      POSTGRES_PASSWORD: your_postgres_password
+      POSTGRES_DB: your_database_name
+
