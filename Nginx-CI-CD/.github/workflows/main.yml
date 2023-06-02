@@ -22,7 +22,7 @@ jobs:
       - name: Build and push Docker image to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: ./Nginx-CI-CD
+          context: Craftech_Challenge/Nginx-CI-CD
           push: true
           tags: emaprado22/cicd_craftech:latest
 
