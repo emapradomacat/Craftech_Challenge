@@ -53,12 +53,11 @@ git push -u origin main
 
 ## Despliegue Automatizado con CI/CD
 
-El despliegue automatizado se logra utilizando las acciones de workflow de GitHub. A continuación, se detallan los pasos necesarios para configurar el flujo de CI/CD desde tu consola local.
-1. Edita el siguiente archivo con tu editor de texto favorito
-```
-vim .github/workflows/main.yml
-```
-2. Reemplazar tu-usuario y nombre-de-la-imagen con tu nombre de usuario y el nombre deseado para la imagen de Docker en DockerHub.
+El despliegue automatizado se logra utilizando las acciones de GitHub, a continuación el paso a paso:
+
+1. Dentro de "Actions" ingresa a la opción "set up a workflow yourself
+
+2. Copia y pega el siguiente código, reemplaza tu-usuario y nombre-de-la-imagen con tu nombre de usuario y el nombre deseado para la imagen de Docker en DockerHub.
 ```
 name: Docker Build & Push
 on:
@@ -82,11 +81,10 @@ jobs:
       - name: Build and push Docker image to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./Nginx-CI-CD/
           push: true
           tags: tu-usuario/nombre-de-la-imagen:latest
 ```
-
 
 3. Guarda los cambios y haz commit
 4. Configura los secrets en el repositorio:
