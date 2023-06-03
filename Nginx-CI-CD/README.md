@@ -41,6 +41,7 @@ cd Nginx-CI-CD/
 git init
 ```
 4. Crea un nuevo repositorio vacío desde GitHub
+
 5. Configura el nuevo repositorio como remoto
 ```
 git remote add origin https://github.com/usuario/repositorio-nuevo.git
@@ -87,6 +88,7 @@ jobs:
 ```
 
 3. Guarda los cambios y haz commit
+
 4. Configura los secrets en el repositorio:
    - En el repositorio de GitHub, ve a la pestaña "Settings".
    - En el menú lateral izquierdo, selecciona "Secrets".
@@ -104,6 +106,7 @@ jobs:
 Ahora si estamos en condiciones de poner a prueba el funcionamiento del proyecto: 
 
 1. Abre el archivo index.html en el directorio raíz del proyecto y realiza los cambios deseados. Puedes personalizar el contenido de la página web según tus necesidades.
+
 2. Guarda los cambios y haz commit
 ```
 git add index.html
