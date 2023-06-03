@@ -15,7 +15,9 @@ Consiste en construir una imagen de Docker que contenga el servidor NGINX con su
    - docker-compose.yml
    - Dockerfile
    - index.html
-
+   - .github/
+     - workflow/
+         - main.yml 
 
 ## Requisitos Previos
 
@@ -46,7 +48,12 @@ git init
 ```
 git remote add origin https://github.com/usuario/repositorio-nuevo.git
 ```
-6. Ejecuta el push inicial para actualizar el nuevo repositorio
+6. Realiza el primer commit
+```
+git add .
+git commit -m "first commit"
+```
+7. Ejecuta el push inicial para actualizar el nuevo repositorio
 ```
 git push -u origin main
 ```
@@ -54,11 +61,9 @@ git push -u origin main
 
 ## Configuración del Despliegue Automatizado
 
-El despliegue automatizado se logra utilizando las acciones de GitHub, a continuación el paso a paso:
+El despliegue automatizado se logra utilizando las acciones de GitHub, en este caso ya se encuentra configurada la acción "Docker Build & Push".
 
-1. Dentro de "Actions" ingresa a la opción "set up a workflow yourself"
-
-2. Copia y pega el siguiente código, reemplaza tu-usuario y nombre-de-la-imagen con tu nombre de usuario y el nombre deseado para la imagen de Docker en DockerHub.
+1. El siguiente código es lo configurado en "main.yml", reemplaza tu-usuario y nombre-de-la-imagen con tu nombre de usuario y el nombre deseado para la imagen de Docker en DockerHub.
 ```
 name: Docker Build & Push
 on:
@@ -82,14 +87,14 @@ jobs:
       - name: Build and push Docker image to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: ./Nginx-CI-CD/
+          context: .
           push: true
           tags: tu-usuario/nombre-de-la-imagen:latest
 ```
 
-3. Guarda los cambios y haz commit
+2. Guarda los cambios y haz commit
 
-4. Configura los secrets en el repositorio:
+3. Configura los secrets en el repositorio:
    - En el repositorio de GitHub, ve a la pestaña "Settings".
    - En el menú lateral izquierdo, selecciona "Secrets".
    - Haz clic en "New repository secret".
