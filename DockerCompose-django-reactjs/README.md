@@ -71,7 +71,6 @@ $docker ps
 CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS          PORTS                                       NAMES
 8f1f488913c8   django-reactjs-backend    "python manage.py ru…"   26 seconds ago   Up 22 seconds   0.0.0.0:8000->8000/tcp, :::8000->8000/tcp   django-reactjs-backend-1
 1553de003682   django-reactjs-frontend   "docker-entrypoint.s…"   2 hours ago      Up 23 seconds   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   django-reactjs-frontend-1
-
 ```
 5. Una vez que los contenedores estén en ejecución, podrás acceder a la aplicación en tu navegador web en la siguiente dirección:
 
